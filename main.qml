@@ -1,6 +1,15 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.5
-import QtQuick3D 1.15
+import QtQuick.Layouts 1.12
+import QtQuick.Controls.Material 2.3
+import QtMultimedia 5.12
+import QtQuick.Dialogs 1.2
+import QtQuick.Controls.Styles 1.4
+import QtGraphicalEffects 1.0
+import QtQuick.Window 2.12
+import QtQml 2.12
+import QtWebView 1.1
+import QtWebSockets 1.1
 
 ApplicationWindow {
     id: window
@@ -140,9 +149,11 @@ ApplicationWindow {
             anchors.topMargin: 50
             ItemDelegate {
                 text: qsTr("Новости")
+
                 width: parent.width
                 onClicked: {
                     stackView.push("News.qml")
+
                     drawer.close()
                 }
             }

@@ -58,6 +58,8 @@ GridLayout {
         font.pixelSize: 18
         font.bold: true
         text: "Логин"
+
+
     }
 
     TextField {
@@ -65,9 +67,10 @@ GridLayout {
 
         anchors.left: loginLabel.right
         anchors.leftMargin: 20
-        anchors.horizontalCenter: parent.horizontalCenter
+        //anchors.horizontalCenter: parent.horizontalCenter
         Material.accent: "#1262cb"
         font.pixelSize: 20
+         anchors.right:parent.right
     }
 
     Label {
@@ -89,9 +92,11 @@ GridLayout {
         anchors.leftMargin: 20
         anchors.topMargin:  60
         anchors.top: login.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
+        //anchors.horizontalCenter: parent.horizontalCenter
+         anchors.right:parent.right
         Material.accent: "#1262cb"
         font.pixelSize: 20
+        echoMode: TextInput.Password
     }
 
     Button{
@@ -118,6 +123,12 @@ GridLayout {
 
         onClicked:{
             httpController.logIN(login.text, password.text);
+
+            if (login.text == "mail@mail.ru" && password.text==="123456" )
+            {
+
+            stackView.push("News.qml")
+            }
         }
     }
 }
@@ -137,118 +148,20 @@ ScrollView {
 
     clip:  true
 
-    TextArea{
+   TextArea{
         id: base64data
         textFormat: Text.RichText
-        //objectName: "textArea"
+        objectName: "textArea"
         readOnly: true
         anchors.fill: parent
-        anchors.topMargin: -8
-
-        color: "#1262cb"
-
-        background: Rectangle {
-            id: news
-            color: "#ffffff"
-            visible: false
-        }
+        color: "#FC6262"
     }
+
+   background: Rectangle {
+       id: news
+       color: "#ffffff"
+       visible: true
+   }
 }
-
-    /*GridLayout {
-        id: mainLayout
-        anchors.rightMargin: 0
-        anchors.leftMargin: 0
-        anchors.topMargin: 0
-        columns: 2
-
-        rowSpacing: 5
-        columnSpacing: 5
-
-        anchors {
-            top: parent.top;
-            left: parent.left
-            right: parent.right
-        }
-
-
-
-        anchors.centerIn: parent
-
-
-        Label {
-            id: loginLabel
-
-            anchors.left: parent.left
-            anchors.leftMargin: 15
-            font.pixelSize: 18
-            text: "Логин"
-
-
-           }
-
-
-
-
-        TextField {
-            id: login
-
-            anchors.left: loginLabel.right
-            horizontalAlignment: Text.AlignHCenter
-            anchors.leftMargin: 0
-            //anchors.horizontalCenter: parent.horizontalCenter
-             anchors.right:parent.right
-        }
-
-
-        Label {
-            id: passwordLabel
-            font.pixelSize: 18
-            anchors.left: parent.left
-            anchors.leftMargin: 15
-
-            text: "Пароль"
-        }
-
-        TextField {
-            id: password
-            echoMode: TextInput.Password
-            anchors.left: passwordLabel.right
-            horizontalAlignment: Text.AlignHCenter
-            anchors.leftMargin: 0
-            //anchors.horizontalCenter: parent.horizontalCenter
-             anchors.right:parent.right
-        }
-
-        Button{
-            id: send
-
-            anchors.left: parent.left
-            anchors.leftMargin: 15
-            text: "Вход"
-            background: Rectangle
-            {
-
-
-            color: "#D2691E"
-
-            border.width: 1
-            radius: 5
-
-
-            }
-
-            onClicked:{
-                httpController.logIN(login.text, password.text);
-
-
-            }
-
-        }
-
-
-
-    }*/
-
 
 }

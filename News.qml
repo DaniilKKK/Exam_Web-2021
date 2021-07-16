@@ -1,10 +1,49 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.5
-
+import QtQuick.Layouts 1.12
+import QtQuick.Controls.Material 2.3
+import QtMultimedia 5.12
+import QtQuick.Dialogs 1.2
+import QtQuick.Controls.Styles 1.4
+import QtGraphicalEffects 1.0
+import QtQuick.Window 2.12
+import QtQml 2.12
+import QtWebView 1.1
+import QtWebSockets 1.1
 Page {
+
+    header:
+
+
+
+
+
+        ToolButton {
+            id: toolButton
+            anchors.top:parent.top
+            //text: stackView.depth > 1
+            text: "Меню"
+
+
+            font.pixelSize: Qt.application.font.pixelSize * 1.6
+
+            onClicked: {
+                if (stackView.depth === 0) {
+                    stackView.pop()
+                } else {
+                    drawer.open()
+                }
+            }
+        }
+
+
+
+
 
 
     title: qsTr("Новости")
+
+
 
     Rectangle {
         anchors.fill: parent

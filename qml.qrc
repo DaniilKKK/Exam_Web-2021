@@ -8,5 +8,7 @@
         <file>logo.png</file>
         <file>logo2.jpg</file>
         <file>logo3.jpg</file>
+        <file>back.png</file>
+        <file>list.png</file>
     </qresource>
 </RCC>

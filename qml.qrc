@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Home.qml</file>
+        <file>News.qml</file>
+        <file>Page2Form.ui.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>logo.png</file>
+        <file>logo2.jpg</file>
+        <file>logo3.jpg</file>
+    </qresource>
+</RCC>
